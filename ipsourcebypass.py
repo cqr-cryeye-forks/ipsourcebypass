@@ -50,6 +50,7 @@ def test_bypass(options, proxies, results, header_name, header_value):
         f.write(r.content)
         f.close()
     results[header_name] = {
+        "header_name": header_name,
         "status_code": r.status_code,
         "length": len(r.text),
         "header": "%s: %s" % (header_name, header_value),
